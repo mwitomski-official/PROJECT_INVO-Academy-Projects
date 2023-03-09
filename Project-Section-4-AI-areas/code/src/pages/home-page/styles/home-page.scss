@@ -1,2 +1,72 @@
 /// Homepage Styles File
 /// Here we import all the Styles files we need for our Homepage.
+
+.home-page-component {
+  --home-page-card-padding: 24px;
+  --home-page-card-margin: 12px;
+
+  display: flex;
+
+  & &__left-column {
+    display: flex;
+    flex-basis: 50%;
+  }
+
+  & &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  & &__header {
+    font-size: var(--header-primary-font-size);
+    line-height: var(--header-primary-line-height);
+    letter-spacing: var(--header-primary-letter-spacing);
+    font-weight: var(--header-primary-font-weight);
+  }
+
+  & &__description {
+    font-size: var(--body-primary-font-size);
+    //line-height: var(--body-primary-line-height);
+    letter-spacing: var(--body-primary-letter-spacing);
+    font-weight: var(--body-primary-font-weight);
+  }
+
+  & &__right-column {
+    display: flex;
+    flex-basis: 50%;
+  }
+
+  & &__cards-container {
+    display: flex;
+  }
+
+  & &__card {
+    background-color: var(--background-color-secondary);
+    border-radius: var(--desktop-rounding);
+    text-align: center;
+    padding: var(--home-page-card-padding);
+    margin: var(--home-page-card-margin);
+  }
+
+  /* Mixins */
+  @mixin breakpoint($size) {
+    @media only screen and (max-width: $size) {
+      @content;
+    }
+  }
+
+  /* Breakpoints */
+  // For desktop screens (992px and above)
+  @include breakpoint(992px) {
+  }
+
+  // For tablet screens (between 576px and 991px)
+  @include breakpoint(991px) {
+  }
+
+  // For mobile screens (575px and below)
+  @include breakpoint(575px) {
+  }
+}
