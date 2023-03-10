@@ -13,49 +13,28 @@
   --mobile-rounding: 16px;
   --desktop-rounding: 24px;
 
-  // h1
   --header-primary-font-size: 48px;
   --header-primary-line-height: 56px;
   --header-primary-letter-spacing: -0.002em;
   --header-primary-font-weight: 500;
 
-  // h2
   --header-secondary-font-size: 32px;
   --header-secondary-line-height: 40px;
   --header-secondary-letter-spacing: -0.002em;
-  --header-secondary-font-weight: 500;
+  --header-secondary-font-weight: 500px;
 
-  // h3
   --header-tertiary-font-size: 20px;
   --header-tertiary-line-height: 20px;
-  --header-tertiary-letter-spacing: 0px;
-  --header-tertiary-font-weight: 500;
+  --header-tertiary-letter-spacing: 0;
+  --header-tertiary-font-weight: 500px;
 
-  // Body 1
   --body-primary-font-size: 16px;
   --body-primary-line-height: 24px;
-  --body-primary-letter-spacing: 0px;
-  --body-primary-font-weight: 400;
-
-  // Body 2
-  --body-primary-font-size: 14px;
-  --body-primary-line-height: 22;
   --body-primary-letter-spacing: 0;
-  --body-primary-font-weight: 400;
+  --body-primary-font-weight: 400px;
 
-  // & &__h1 {
-  //   font-size: var(--header-primary-font-size);
-  //   line-height: var(--header-primary-line-height);
-  //   letter-spacing: var(--header-primary-letter-spacing);
-  //   font-weight: var(--header-primary-font-weight);
-
-  //   align-items: center;
-  // }
-
-  //Body 2
-
-  // --background-color-icon-ml: #ca59ff;
-  // --background-color-icon-cv: #6c7cff;
-  // --background-color-icon-nl: #2affff;
-  // --background-color-icon-r: #fff629;
+  --body-secondary-font-size: 14px;
+  --body-secondary-line-height: 22px;
+  --body-secondary-letter-spacing: 0;
+  --body-secondary-font-weight: 400px;
 }

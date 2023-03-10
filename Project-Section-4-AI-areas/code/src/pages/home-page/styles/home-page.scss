@@ -7,39 +7,51 @@
 
   display: flex;
 
+  // -------------------------------- LEFT COLUMN --------------------------------
   & &__left-column {
     display: flex;
     flex-basis: 50%;
   }
 
-  & &__info {
+  & &__info-section {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
+    // padding: 0.5em;
+    margin-top: 167px;
+    margin-left: 152px;
+    margin-right: 100px;
   }
 
-  & &__header {
+  & &__info-title {
     font-size: var(--header-primary-font-size);
     line-height: var(--header-primary-line-height);
     letter-spacing: var(--header-primary-letter-spacing);
     font-weight: var(--header-primary-font-weight);
+    margin: 0;
   }
 
-  & &__description {
+  & &__info-description {
     font-size: var(--body-primary-font-size);
-    //line-height: var(--body-primary-line-height);
+    line-height: var(--body-primary-line-height);
     letter-spacing: var(--body-primary-letter-spacing);
     font-weight: var(--body-primary-font-weight);
+    margin-top: 24px;
   }
 
+  // -------------------------------- RIGHT COLUMN --------------------------------
   & &__right-column {
     display: flex;
     flex-basis: 50%;
   }
 
   & &__cards-container {
-    display: flex;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    column-gap: 0px;
+    row-gap: 0px;
+    margin-top: 159px;
+    margin-right: 152px;
   }
 
   & &__card {
@@ -50,6 +62,21 @@
     margin: var(--home-page-card-margin);
   }
 
+  & &__card-title {
+    font-size: var(--header-tertiary-font-size);
+    line-height: var(--header-tertiary-line-height);
+    letter-spacing: var(--header-tertiary-letter-spacing);
+    font-weight: var(--header-tertiary-font-weight);
+  }
+
+  & &__card-description {
+    font-size: var(--body-primary-font-size);
+    line-height: var(--body-primary-line-height);
+    letter-spacing: var(--body-primary-letter-spacing);
+    font-weight: var(--body-primary-font-weight);
+    opacity: 0.5;
+  }
+
   /* Mixins */
   @mixin breakpoint($size) {
     @media only screen and (max-width: $size) {
@@ -57,7 +84,7 @@
     }
   }
 
-  /* Breakpoints */
+  /* -------------------------------- Breakpoints ------------------------------------------------ */
   // For desktop screens (992px and above)
   @include breakpoint(992px) {
   }
