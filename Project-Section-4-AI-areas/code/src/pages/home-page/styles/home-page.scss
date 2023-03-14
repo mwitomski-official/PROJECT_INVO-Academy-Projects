@@ -1,99 +1,199 @@
 /// Homepage Styles File
 /// Here we import all the Styles files we need for our Homepage.
 
+/* Figma sizes 
+  Dektop: 1440 x 810
+  Tablet: 834 x 1194
+  Phone: 375 x 1184
+*/
+
+/* Mixins */
+@mixin breakpoint($size) {
+  @media only screen and (max-width: $size) {
+    @content;
+  }
+}
+
 .home-page-component {
-  --home-page-card-padding: 24px;
-  --home-page-card-margin: 12px;
+  /* GENRAL */
+  --hp-flex-direction: row;
+
+  /* LEFT COLUMN */
+  --hp-column-flex-basis: 50%;
+
+  --hp-info-title-font-size: var(--header-primary-font-size);
+  --hp-info-title-line-height: var(--header-primary-line-height);
+  --hp-info-title-letter-spacing: var(--header-primary-letter-spacing);
+  --hp-info-title-font-weight: var(--header-primary-font-weight);
+
+  --hp-info-desc-font-size: var(--body-primary-font-size);
+  --hp-info-desc-line-height: var(--body-primary-line-height);
+  --hp-info-desc-letter-spacing: var(--body-primary-letter-spacing);
+  --hp-info-desc-font-weight: var(--body-primary-font-weight);
+
+  --hp-card-desc-font-size: var(--body-primary-font-size);
+  --hp-card-desc-line-height: var(--body-primary-line-height);
+  --hp-card-desc-letter-spacing: var(--body-primary-letter-spacing);
+  --hp-card-desc-font-weight: var(--body-primary-font-weight);
+
+  /* RIGHT COLUMN */
+  --hp-card-border-radius: var(--desktop-rounding);
 
   display: flex;
+  flex-direction: var(--home-page-flex-direction);
 
   // -------------------------------- LEFT COLUMN --------------------------------
   & &__left-column {
     display: flex;
-    flex-basis: 50%;
+    flex-basis: var(--hp-column-flex-basis);
   }
 
   & &__info-section {
     display: flex;
     flex-direction: column;
-    // padding: 0.5em;
     margin-top: 167px;
     margin-left: 152px;
     margin-right: 100px;
   }
 
   & &__info-title {
-    font-size: var(--header-primary-font-size);
-    line-height: var(--header-primary-line-height);
-    letter-spacing: var(--header-primary-letter-spacing);
-    font-weight: var(--header-primary-font-weight);
+    font-size: var(--hp-info-title-font-size);
+    line-height: var(--hp-info-title-line-height);
+    letter-spacing: var(--hp-info-title-letter-spacing);
+    font-weight: var(--hp-info-title-font-weight);
     margin: 0;
   }
 
   & &__info-description {
-    font-size: var(--body-primary-font-size);
-    line-height: var(--body-primary-line-height);
-    letter-spacing: var(--body-primary-letter-spacing);
-    font-weight: var(--body-primary-font-weight);
-    margin-top: 24px;
+    font-size: var(--hp-info-desc-font-size);
+    line-height: var(--hp-info-desc-line-height);
+    letter-spacing: var(--hp-info-desc-letter-spacing);
+    font-weight: var(--hp-info-desc-font-weight);
+    margin-top: 25px;
   }
 
   // -------------------------------- RIGHT COLUMN --------------------------------
   & &__right-column {
     display: flex;
-    flex-basis: 50%;
+    flex-basis: var(--hp-column-flex-basis);
   }
 
   & &__cards-container {
     display: grid;
     grid-template-columns: auto auto;
     grid-template-rows: auto auto;
-    column-gap: 0px;
-    row-gap: 0px;
+    column-gap: 24px;
+    row-gap: 31px;
     margin-top: 159px;
     margin-right: 152px;
   }
 
   & &__card {
     background-color: var(--background-color-secondary);
-    border-radius: var(--desktop-rounding);
+    border-radius: var(--hp-card-border-radius);
     text-align: center;
-    padding: var(--home-page-card-padding);
-    margin: var(--home-page-card-margin);
+    margin-top: 10px;
+    margin-left: 8px;
+  }
+
+  & &__card-img {
+    margin: 0px;
+    padding: 24px 0px 0px 0px;
   }
 
   & &__card-title {
+    margin: 0px;
     font-size: var(--header-tertiary-font-size);
     line-height: var(--header-tertiary-line-height);
     letter-spacing: var(--header-tertiary-letter-spacing);
     font-weight: var(--header-tertiary-font-weight);
+    padding: 16px 6px 8px 8px;
   }
 
   & &__card-description {
-    font-size: var(--body-primary-font-size);
-    line-height: var(--body-primary-line-height);
-    letter-spacing: var(--body-primary-letter-spacing);
-    font-weight: var(--body-primary-font-weight);
+    margin: 0px;
+    font-size: var(--hp-card-desc-font-size);
+    line-height: var(--hp-card-desc-line-height);
+    letter-spacing: var(--hp-card-desc-letter-spacing);
+    font-weight: var(--hp-card-desc-font-weight);
+    padding: 12px 12px 24px 16px;
     opacity: 0.5;
   }
 
-  /* Mixins */
-  @mixin breakpoint($size) {
-    @media only screen and (max-width: $size) {
-      @content;
+  /* Breakpoints */
+  /* -------------------------------- Tablet -------------------------------- */
+  @include breakpoint(834px) {
+    --home-page-flex-direction: column;
+
+    &__left-column,
+    &__right-column {
+      --home-page-column-flex-basis: 100%;
+    }
+
+    & &__info-title {
     }
   }
 
-  /* -------------------------------- Breakpoints ------------------------------------------------ */
-  // For desktop screens (992px and above)
-  @include breakpoint(992px) {
+  /* -------------------------------- Tablet -------------------------------- */
+
+  /* --------------------------- Mobile Phone -------------------------------- */
+  @include breakpoint(375px) {
+    & &__info-section {
+      display: flex;
+      flex-direction: column;
+      margin-top: 48px;
+      margin-left: 16px;
+      margin-right: 16px;
+    }
+
+    & &__info-title {
+      --hp-info-title-font-size: var(--header-secondary-font-size);
+      --hp-info-title-line-height: var(--header-secondary-line-height);
+      --hp-info-title-letter-spacing: var(--header-secondary-letter-spacing);
+      --hp-info-title-font-weight: var(--header-secondary-font-weight);
+    }
+
+    & &__cards-container {
+      display: flex;
+      flex-direction: column;
+      margin-top: 8px;
+      margin-right: 16px;
+      margin-left: 16px;
+    }
+
+    & &__card {
+      --hp-card-border-radius: var(--mobile-rounding);
+      margin-top: 0px;
+      margin-left: 0px;
+    }
+
+    & &__card-img {
+      // margin: 10px;
+      // padding: 20px 16px 0px 16px;
+      transform: scale(0.83); // 83% of original size
+      margin: 0;
+      padding-top: 16px;
+      padding-right: 16px;
+      padding-left: 12px;
+      padding-bottom: 10px;
+    }
+
+    & &__card-title {
+      padding: 0px;
+      margin: 0px;
+    }
+
+    & &__card-description {
+      --hp-card-desc-font-size: var(--body-secondary-font-size);
+      --hp-card-desc-line-height: var(--body-secondary-line-height);
+      --hp-card-desc-letter-spacing: var(--body-secondary-letter-spacing);
+      --hp-card-desc-font-weight: var(--body-secondary-font-weight);
+      padding-right: 20px;
+      padding-left: 20px;
+      padding-bottom: 20px;
+      padding-top: 8px;
+    }
   }
 
-  // For tablet screens (between 576px and 991px)
-  @include breakpoint(991px) {
-  }
-
-  // For mobile screens (575px and below)
-  @include breakpoint(575px) {
-  }
+  /* --------------------------- Mobile Phone -------------------------------- */
 }
