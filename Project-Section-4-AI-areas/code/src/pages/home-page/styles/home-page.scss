@@ -1,7 +1,7 @@
 /// Homepage Styles File
 /// Here we import all the Styles files we need for our Homepage.
 
-/* Figma sizes 
+/* Supported sized (based on Figma)
   Dektop: 1440 x 810
   Tablet: 834 x 1194
   Phone: 375 x 1184
@@ -17,34 +17,47 @@
 .home-page-component {
   /* GENRAL */
   --hp-flex-direction: row;
-  --tablet-checkpoint: 834px;
-  --phone-checkpoint: 375px;
 
   /* LEFT COLUMN */
   --hp-column-flex-basis: 50%;
   --hp-info-section-margin: 167px 100px 0px 152px;
 
+  // Info section
   --hp-info-title-font-size: var(--header-primary-font-size);
   --hp-info-title-line-height: var(--header-primary-line-height);
   --hp-info-title-letter-spacing: var(--header-primary-letter-spacing);
   --hp-info-title-font-weight: var(--header-primary-font-weight);
+  --hp-info-title-margin: 0px;
+  --hp-info-description-margin: 24px 0px 0px 0px;
 
   --hp-info-desc-font-size: var(--body-primary-font-size);
   --hp-info-desc-line-height: var(--body-primary-line-height);
   --hp-info-desc-letter-spacing: var(--body-primary-letter-spacing);
   --hp-info-desc-font-weight: var(--body-primary-font-weight);
 
+  /* RIGHT COLUMN */
+
+  // Cards container
+  --hp-cards-container-margin: 159px 152px 0px 0px;
+  --hp-cards-container-column-gap: 20px;
+  --hp-cards-container-row-gap: 15px;
+
+  // Single card
+  --hp-card-border-radius: var(--desktop-rounding);
+  --hp-card-box-shadow: 0 0 0 2px;
+  --hp-card-margin: 10px 0px 0px 8px;
+  --hp-card-img-padding: 24px 0px 0px 0px;
+  --hp-card-title-padding: 16px 6px 8px 8px;
   --hp-card-desc-font-size: var(--body-primary-font-size);
   --hp-card-desc-line-height: var(--body-primary-line-height);
   --hp-card-desc-letter-spacing: var(--body-primary-letter-spacing);
   --hp-card-desc-font-weight: var(--body-primary-font-weight);
-
-  /* RIGHT COLUMN */
-  --hp-card-border-radius: var(--desktop-rounding);
-  --hp-cards-container-margin: 159px 152px 0px 0px;
-  --hp-card-margin: 10px 0px 0px 8px;
-  --hp-card-img-padding: 24px 0px 0px 0px;
   --hp-card-desc-padding: 10px 12px 24px 14px;
+
+  --hp-card-color-first: #ca59ff;
+  --hp-card-color-second: #6c7cff;
+  --hp-card-color-third: #2affff;
+  --hp-card-color-fourth: #fff629;
 
   display: flex;
   flex-direction: var(--home-page-flex-direction);
@@ -66,15 +79,15 @@
     line-height: var(--hp-info-title-line-height);
     letter-spacing: var(--hp-info-title-letter-spacing);
     font-weight: var(--hp-info-title-font-weight);
-    margin: 0;
+    margin: var(--hp-info-title-margin);
   }
 
   & &__info-description {
+    margin: var(--hp-info-description-margin);
     font-size: var(--hp-info-desc-font-size);
     line-height: var(--hp-info-desc-line-height);
     letter-spacing: var(--hp-info-desc-letter-spacing);
     font-weight: var(--hp-info-desc-font-weight);
-    margin-top: 25px;
   }
 
   // -------------------------------- RIGHT COLUMN --------------------------------
@@ -87,16 +100,39 @@
     display: grid;
     grid-template-columns: auto auto;
     grid-template-rows: auto auto;
-    column-gap: 20px;
-    row-gap: 15px;
+    column-gap: var(--hp-cards-container-column-gap);
+    row-gap: var(--hp-cards-container-row-gap);
     margin: var(--hp-cards-container-margin);
   }
 
   & &__card {
+    margin: var(--hp-card-margin);
     text-align: center;
     background-color: var(--background-color-secondary);
     border-radius: var(--hp-card-border-radius);
-    margin: var(--hp-card-margin);
+    transition: box-shadow 0.5s;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+
+    &:hover {
+      cursor: pointer;
+      filter: brightness(85%);
+    }
+
+    &:hover:nth-child(1) {
+      box-shadow: var(--hp-card-box-shadow) var(--hp-card-color-first);
+    }
+
+    &:hover:nth-child(2) {
+      box-shadow: var(--hp-card-box-shadow) var(--hp-card-color-second);
+    }
+
+    &:hover:nth-child(3) {
+      box-shadow: var(--hp-card-box-shadow) var(--hp-card-color-third);
+    }
+
+    &:hover:nth-child(4) {
+      box-shadow: var(--hp-card-box-shadow) var(--hp-card-color-fourth);
+    }
   }
 
   & &__card-img {
@@ -110,7 +146,7 @@
     line-height: var(--header-tertiary-line-height);
     letter-spacing: var(--header-tertiary-letter-spacing);
     font-weight: var(--header-tertiary-font-weight);
-    padding: 16px 6px 8px 8px;
+    padding: var(--hp-card-title-padding);
   }
 
   & &__card-description {
@@ -128,12 +164,47 @@
   @include breakpoint(834px) {
     --home-page-flex-direction: column;
 
-    &__left-column,
-    &__right-column {
-      --home-page-column-flex-basis: 100%;
+    & &__info-section {
+      --hp-info-section-margin: 247px 169px 16px 169px;
     }
 
     & &__info-title {
+      --hp-info-title-margin: 10px 0px 0px 0px;
+    }
+
+    & &__info-description {
+      --hp-info-description-margin: 16px 0px 0px 0px;
+    }
+
+    & &__cards-container {
+      --hp-cards-container-margin: 0px 169px 0px 169px;
+      --hp-cards-container-column-gap: 16px;
+      --hp-cards-container-row-gap: 16px;
+    }
+
+    & &__card {
+      --hp-card-margin: 0px;
+      --hp-card-border-radius: var(--desktop-rounding);
+    }
+
+    & &__card-img {
+      --hp-card-img-padding: 20px 0px 0px 0px;
+      transform: scale(0.83); // 83% of original size
+    }
+
+    & &__card-title {
+      --hp-card-title-font-size: var(--header-tertiary-font-size);
+      --hp-card-title-line-height: var(--header-tertiary-line-height);
+      --hp-card-title-letter-spacing: var(--header-tertiary-letter-spacing);
+      --hp-card-title-font-weight: var(--header-tertiary-font-weight);
+    }
+
+    & &__card-description {
+      --hp-card-desc-padding: 0px 17px 20px 16px;
+      --hp-card-desc-font-size: var(--body-secondary-font-size);
+      --hp-card-desc-line-height: var(--body-secondary-line-height);
+      --hp-card-desc-letter-spacing: var(--body-secondary-letter-spacing);
+      --hp-card-desc-font-weight: var(--body-secondary-font-weight);
     }
   }
 
@@ -142,32 +213,32 @@
   /* --------------------------- Mobile Phone -------------------------------- */
   @include breakpoint(375px) {
     & &__info-section {
+      --hp-info-section-margin: 48px 16px 16px 16px;
       display: flex;
       flex-direction: column;
-      --hp-info-section-margin: 48px 16px 0px 16px;
     }
 
     & &__info-title {
+      --hp-info-title-margin: 10px 0px 0px 0px;
       --hp-info-title-font-size: var(--header-secondary-font-size);
       --hp-info-title-line-height: var(--header-secondary-line-height);
       --hp-info-title-letter-spacing: var(--header-secondary-letter-spacing);
       --hp-info-title-font-weight: var(--header-secondary-font-weight);
-      margin-top: 10px;
     }
 
     & &__info-description {
-      margin-top: 16px;
+      --hp-info-description-margin: 16px 0px 0px 0px;
     }
 
     & &__cards-container {
+      --hp-cards-container-margin: 8px 16px 0px 16px;
       display: flex;
       flex-direction: column;
-      --hp-cards-container-margin: 8px 16px 0px 16px;
     }
 
     & &__card {
-      --hp-card-border-radius: var(--mobile-rounding);
       --hp-card-margin: 0px;
+      --hp-card-border-radius: var(--mobile-rounding);
     }
 
     & &__card-img {
@@ -177,16 +248,16 @@
     }
 
     & &__card-title {
-      padding: 0px;
       margin: 0px;
+      padding: 0px;
     }
 
     & &__card-description {
+      --hp-card-desc-padding: 16px 20px 20px 20px;
       --hp-card-desc-font-size: var(--body-secondary-font-size);
       --hp-card-desc-line-height: var(--body-secondary-line-height);
       --hp-card-desc-letter-spacing: var(--body-secondary-letter-spacing);
       --hp-card-desc-font-weight: var(--body-secondary-font-weight);
-      --hp-card-desc-padding: 16px 20px 20px 20px;
     }
   }
 
