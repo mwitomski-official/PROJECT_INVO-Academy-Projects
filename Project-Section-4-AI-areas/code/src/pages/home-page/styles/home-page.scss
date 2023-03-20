@@ -2,7 +2,7 @@
 /// Here we import all the Styles files we need for our Homepage.
 
 /* Supported sized (based on Figma)
-  Dektop: 1440 x 810
+  Desktop: 1440 x 810
   Tablet: 834 x 1194
   Phone: 375 x 1184
 */
@@ -211,7 +211,7 @@
   /* -------------------------------- Tablet -------------------------------- */
 
   /* --------------------------- Mobile Phone -------------------------------- */
-  @include breakpoint(375px) {
+  @include breakpoint(700px) {
     & &__info-section {
       --hp-info-section-margin: 48px 16px 16px 16px;
       display: flex;
