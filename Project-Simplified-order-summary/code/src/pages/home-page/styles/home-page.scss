@@ -1,0 +1,103 @@
+/// Homepage Styles File
+/// Here we import all the Styles files we need for our Homepage.
+
+/* Supported sized (based on Figma)
+  Desktop: 1440 x 810
+  Tablet: 834 x 1194
+  Phone: 375 x 1184
+*/
+
+/* Mixins */
+@mixin breakpoint($size) {
+  @media only screen and (max-width: $size) {
+    @content;
+  }
+}
+
+.home-page-component {
+  // -------------------------------- GENRAL -------------------------------------------
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  // -------------------------------- ORDER SUMMARY CARD --------------------------------
+  & &__card {
+    display: flex;
+    flex-direction: column;
+
+    height: 665px;
+    width: 460px;
+
+    max-height: 665px;
+    max-width: 460px;
+
+    background-color: var(--color-white);
+    border-radius: var(--rounding);
+
+    align-items: center;
+  }
+
+  & &__card-img {
+    border-top-left-radius: var(--rounding);
+    border-top-right-radius: var(--rounding);
+  }
+
+  & &__card-title {
+    color: var(--color-title);
+    font-weight: var(--font-weight-primary-header);
+    font-size: var(--font-size-primary-header);
+    line-height: var(--line-height-primary-header);
+    letter-spacing: var(--letter-spacing-primary-header);
+    padding-top: 32px;
+  }
+
+  & &__card-description {
+    font-weight: var(--font-weight-primary-body);
+    font-size: var(--font-size-primary-body);
+    line-height: var(--line-height-primary-body);
+    letter-spacing: var(--letter-spacing-primary-body);
+    padding-top: 16px;
+    text-align: center;
+    max-width: 349px;
+    color: var(--color-body);
+  }
+
+  & &__card-plan-selector {
+    background-color: var(--color-background);
+    border-radius: var(--rounding);
+    height: 83px;
+    width: 428px;
+    margin-top: 40px;
+  }
+}
+
+// For Mobile
+
+@media (max-width: 575px) {
+  // Your mobile styles here
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  // Your small device styles here
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  // Your medium device styles here
+}
+
+// For Tablet
+
+@media (min-width: 768px) and (max-width: 991px) {
+  // Your medium device styles here
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  // Your large device styles here
+}
+
+// For Desktop
+
+@media (min-width: 1200px) {
+  // Your extra large device styles here
+}

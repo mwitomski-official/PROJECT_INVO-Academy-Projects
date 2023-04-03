@@ -1,0 +1,85 @@
+/// Root Styles file
+/// Here we define all the root variables we need for our project.
+/// For examples see Material Design color system: https://m2.material.io/design/color/the-color-system.html
+
+:root {
+  // Colors
+  --color-background: #f8f9fe;
+  --color-title: #151827;
+  --color-primary: #680262;
+  --color-body: #85859b;
+  --color-stroke: #cfd1dd;
+  --color-white: #ffffffff;
+
+  // Fonts
+  --font-family: "Manrope";
+  --rounding: 16px;
+  --stroke: 1px;
+
+  // h1
+  --font-weight-primary-header: bold;
+  --font-size-primary-header: 32px;
+  --line-height-primary-header: 32px;
+  --letter-spacing-primary-header: 0%;
+
+  --font-weight-primary-header-mobile: bold;
+  --font-size-primary-header-mobile: 24px;
+  --line-height-primary-header-mobile: 24px;
+  --letter-spacing-primary-header-mobile: 0%;
+
+  // h2
+  --font-weight-secondary-header: bold;
+  --font-size-secondary-header: 18px;
+  --line-height-secondary-header: 18px;
+  --letter-spacing-secondary-header: 0%;
+
+  --font-weight-secondary-header-mobile: bold;
+  --font-size-secondary-header-mobile: 16px;
+  --line-height-secondary-header-mobile: 16px;
+  --letter-spacing-secondary-header-mobile: 0%;
+
+  // Body 1
+  --font-weight-primary-body: medium;
+  --font-size-primary-body: 16px;
+  //   --line-height-primary-body: 16px;
+  --line-height-primary-body: 25.6px;
+  --letter-spacing-primary-body: -0.01em;
+
+  --font-weight-primary-body-mobile: medium;
+  --font-size-primary-body-mobile: 14px;
+  --line-height-primary-body-mobile: 14px;
+  --letter-spacing-primary-body-mobile: -0.01em;
+
+  // Body 2
+  --font-weight-secondary-body: medium;
+  --font-size-secondary-body: 14px;
+  --line-height-secondary-body: 14px;
+  --letter-spacing-secondary-body: -0.01em;
+
+  --font-weight-secondary-body-mobile: medium;
+  --font-size-secondary-body-mobile: 12px;
+  --line-height-secondary-body-mobile: 12px;
+  --letter-spacing-secondary-body-mobile: -0.01em;
+
+  // Button
+  --font-weight-secondary-button: bold;
+  --font-size-secondary-button: 16px;
+  --line-height-secondary-button: 160%;
+  --letter-spacing-secondary-button: -0.01em;
+
+  --font-weight-secondary-button-mobile: bold;
+  --font-size-secondary-button-mobile: 16px;
+  --line-height-secondary-button-mobile: 160%;
+  --letter-spacing-secondary-button-mobile: -0.01em;
+
+  // Link
+  --font-weight-secondary-link: bold;
+  --font-size-secondary-link: 16px;
+  --line-height-secondary-link: 160%;
+  --letter-spacing-secondary-link: -0.01em;
+
+  --font-weight-secondary-link-mobile: bold;
+  --font-size-secondary-link-mobile: 14px;
+  --line-height-secondary-link-mobile: 160%;
+  --letter-spacing-secondary-link-mobile: -0.01em;
+}
