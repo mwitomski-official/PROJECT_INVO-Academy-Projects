@@ -6,3 +6,4 @@ import '../styles/home-page.scss'
 import { setupCounter } from '../../../global-scripts/scripts/counter/counter.js'
 
 setupCounter(document.querySelector('#counter'))
+

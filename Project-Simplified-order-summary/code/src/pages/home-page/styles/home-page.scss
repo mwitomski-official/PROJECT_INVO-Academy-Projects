@@ -25,17 +25,14 @@
   & &__card {
     display: flex;
     flex-direction: column;
+    align-items: center;
 
-    height: 665px;
-    width: 460px;
-
-    max-height: 665px;
-    max-width: 460px;
+    min-height: 665px;
+    min-width: 460px;
 
     background-color: var(--color-white);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     border-radius: var(--rounding);
-
-    align-items: center;
   }
 
   & &__card-img {
@@ -69,6 +66,54 @@
     height: 83px;
     width: 428px;
     margin-top: 40px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  & &__card-button-proceed {
+    margin-top: 32px;
+    min-width: 428px;
+    min-height: 56px;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border-radius: var(--rounding);
+    font-weight: var(--font-weight-button);
+    font-size: var(--font-size-button);
+    line-height: var(--line-height-button);
+    letter-spacing: var(--letter-spacing-button);
+    border: 0px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      cursor: pointer;
+      background-color: #490245;
+    }
+
+    &:active {
+      cursor: pointer;
+      filter: brightness(0.6);
+    }
+  }
+
+  & &__card-button-cancel {
+    margin-top: 20px;
+  }
+
+  & &__card-button-cancel-link {
+    color: var(--color-title);
+    font-weight: var(--font-weight-link);
+    font-size: var(--font-size-link);
+    line-height: var(--line-height-link);
+    letter-spacing: var(--letter-spacing-link);
+
+    &:hover {
+      cursor: pointer;
+      color: #490245;
+    }
   }
 }
 
